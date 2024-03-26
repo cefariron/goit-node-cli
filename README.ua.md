@@ -58,7 +58,7 @@ node index.js -a get -i 05olLMgyVQdWRwgKfg5J6
 node index.js -a add -n Mango -e mango@gmail.com -p 322-22-22
 
 # Видаляємо контакт та виводимо в консоль об'єкт видаленого контакту або null, якщо контакту з таким id не існує.
-node index.js -a remove -i qdggE76Jtbfd9eWJHrssH
+node index.js -a remove -i e6ywwRe4jcqxXfCZOj_1e
 ```
 
 ## Критерії прийому

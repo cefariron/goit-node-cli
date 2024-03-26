@@ -20,16 +20,28 @@ async function getContactById(contactId) {
 }
 
 async function removeContact(contactId) {
-    const result = await readFile(contactsPath);
-    const contactsList = JSON.parse(result);
+  const result = await readFile(contactsPath);
+  const contactsList = JSON.parse(result);
   const index = contactsList.findIndex(contact => contact.id === contactId);
   if (index !== -1) {
-    const removedContact = contactsList.splice(index, 1);
-    await writeFile(contactsPath, JSON.stringify(contactsList, null, 2));
-    return removedContact;
+      const removedContact = contactsList.splice(index, 1)[0];
+      await writeFile(contactsPath, JSON.stringify(contactsList, null, 2));
+      return removedContact;
   }
   return null;
 }
+
+// async function removeContact(contactId) {
+//     const result = await readFile(contactsPath);
+//     const contactsList = JSON.parse(result);
+//   const index = contactsList.findIndex(contact => contact.id === contactId);
+//   if (index !== -1) {
+//     const removedContact = contactsList.splice(index, 1);
+//     await writeFile(contactsPath, JSON.stringify(contactsList, null, 2));
+//     return removedContact;
+//   }
+//   return null;
+// }
 
 async function addContact(name, email, phone) {
   try {
